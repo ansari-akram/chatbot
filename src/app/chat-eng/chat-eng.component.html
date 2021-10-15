@@ -1,0 +1,49 @@
+<div style="width: 100%; float: right;" >
+    <div>
+        <h3 style="text-align: center; color: azure;">Conversation Window</h3>
+    </div>
+
+    <div class="justify-content-center"
+    style="overflow-anchor: none; border-radius: 20px; width: 100%; padding-top: 20px; padding-bottom: 10px;
+    float:right; border-style: groove; background-color: turquoise;">
+
+    <div #scrollMe style="overflow: auto; height: 450px;">
+    <ng-container *ngFor="let message of messages | async" >
+
+        <div [ngClass]="{ 'from': message.sentBy === 'bot','to': message.sentBy === 'user' }">
+            <br>
+            <div *ngIf="message.sentBy === 'user'" style="max-width: 70%; border-style: groove; float: right; 
+                margin-right: 30px; padding: 10px 15px; border-radius: 20px; background-color: aqua;">
+                <h6>{{ message.content }}</h6>
+            </div>
+
+            <div *ngIf="message.sentBy === 'bot'" style="max-width: 70%; border-style: groove; float: left; 
+                margin-left: 30px; padding: 10px 15px; border-radius: 20px; background-color:deepskyblue">
+                <h6>{{ message.content }}</h6>
+            </div>
+            <br><br>
+        </div>
+
+    </ng-container>
+    </div>
+
+    <br><br>
+
+    <div style="padding-left: 10px; padding-right: 10px;">
+        <input name="message" placeholder="Type your message here...." id="message" 
+        style="padding-left: 15px; width:85%; float: left;"
+        [(ngModel)]="formValue" (keyup.enter)="sendMessage()" type="text">
+
+        <button class="btn btn-outline-primary" 
+        style="width:13%; border-radius: 5px; margin-top: -3px;
+        border-radius: 10px; float: right; " 
+        (click)="sendMessage()">
+            <i class="fa fa-paper-plane " aria-hidden="true"></i>
+        </button>
+    </div>
+
+</div>
+
+
+
+</div>

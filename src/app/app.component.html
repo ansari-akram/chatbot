@@ -1,0 +1,29 @@
+<div style="width: 100%;">
+  <div class="container" style="width: 50%; float:left; margin: auto; text-align: center;">
+    <div style="padding-bottom: 55%;">
+    <h1 class="justify-content-center"><i class="fas fa-robot"></i> Watson-Angular Chatbot <i class="fas fa-robot"></i></h1>
+    <h3 class="justify-content-center">Languages supported : English & Arabic</h3>
+    <br>
+
+    <nav>
+    <ul class="navbar-nav">
+
+      <li class="nav-item">
+          <button routerLink="english" class="btn btn-outline-secondary" Button>Ask Watson-Chatbot</button>
+      </li>
+      
+    </ul>
+    </nav>
+    </div>
+
+    <div style="padding-bottom: 30px;">
+      <app-speech-to-text></app-speech-to-text> 
+    </div>
+
+  </div>
+
+  <div style="width: 50%; float: right;">
+  <router-outlet></router-outlet>
+  </div>
+
+</div>
